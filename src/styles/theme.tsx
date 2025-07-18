@@ -1,4 +1,5 @@
 'use client';
+import { deepOrange, green, red, yellow } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 import { Roboto } from "next/font/google";
 
@@ -9,6 +10,12 @@ const roboto = Roboto({
     variable: '--font-roboto',
 });
 
+const primary = {
+    main: '',
+    light: '',
+    dark: '',
+};
+
 const theme = createTheme({
     colorSchemes: { light: true, dark: true },
     cssVariables: {
@@ -16,7 +23,7 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: roboto.style.fontFamily,
-        // h1: heading,
+        //h1: heading,
         // h2: heading,
         // h3: heading,
         // h4: heading,
@@ -25,10 +32,11 @@ const theme = createTheme({
     },
     components: {},
     palette: {
-        // mode: "light",
-        // green: "#28d655",
-        // red: "#E32227 or BF0A30",
-        // yellow:#FFD700
+        primary: deepOrange,
+        secondary: red,
+        success: green,
+        warning: yellow,
+        error: red,
         background: {
             default: "#ffffff",
         }
