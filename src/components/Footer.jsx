@@ -1,36 +1,66 @@
-"use client";
-
+import Link from "next/link";
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { business } from "../lib/siteContent";
 
 export default function Footer() {
   return (
-    <footer style={{ marginTop: "3rem", padding: "2rem 0", borderTop: "1px solid #e5e7eb" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 16px", color: "#4b5563" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 16, justifyContent: "space-between" }}>
-          <div>
-            <div style={{ fontWeight: 800, color: "#111827" }}>Huerta’s Albuquerque Jerky</div>
-            <div>307 A San Pedro Dr. NE, Albuquerque, NM 87108</div>
-            <div>
-              Call: <a href="tel:+15056775375">505-677-JERK (5375)</a>
-            </div>
-          </div>
-          <div>
-            <div style={{ fontWeight: 800, color: "#111827" }}>Social</div>
-            <div>
-              <a href="https://www.instagram.com/HUERTAS_ALBUQUERQUE_JERKY_" target="_blank" rel="noreferrer">
+    <Box
+      component="footer"
+      sx={{
+        mt: 8,
+        py: 5,
+        borderTop: "1px solid",
+        borderColor: "divider",
+        backgroundColor: "#f3e6d5",
+      }}
+    >
+      <Container maxWidth="lg">
+        <Grid container spacing={3}>
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Typography variant="h6" sx={{ mb: 1 }}>
+              {business.name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {business.addressLine1}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {business.cityStateZip}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              <a href={`tel:${business.phoneTel}`}>{business.phoneDisplay}</a>
+            </Typography>
+          </Grid>
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Typography variant="h6" sx={{ mb: 1 }}>
+              Explore
+            </Typography>
+            <Stack spacing={0.5}>
+              <Link href="/shop">Shop Flavors</Link>
+              <Link href="/about">Our Story</Link>
+              <Link href="/faq">FAQ</Link>
+              <Link href="/wholesale">Wholesale</Link>
+              <Link href="/recipes">Recipes</Link>
+            </Stack>
+          </Grid>
+          <Grid size={{ xs: 12, md: 4 }}>
+            <Typography variant="h6" sx={{ mb: 1 }}>
+              Follow
+            </Typography>
+            <Stack spacing={0.5}>
+              <a href={business.social.instagram} target="_blank" rel="noreferrer">
                 Instagram
               </a>
-            </div>
-            <div>
-              <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+              <a href={business.social.facebook} target="_blank" rel="noreferrer">
                 Facebook
               </a>
-            </div>
-          </div>
-        </div>
-        <div style={{ marginTop: 16, fontSize: 12 }}>
-          © {new Date().getFullYear()} Huerta’s Albuquerque Jerky. All rights reserved.
-        </div>
-      </div>
-    </footer>
+              <Link href="/contact">Contact Us</Link>
+            </Stack>
+          </Grid>
+        </Grid>
+        <Typography variant="caption" display="block" sx={{ mt: 4 }}>
+          Copyright {new Date().getFullYear()} {business.name}. All rights reserved.
+        </Typography>
+      </Container>
+    </Box>
   );
 }

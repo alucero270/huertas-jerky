@@ -22,6 +22,8 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Wholesale", href: "/wholesale" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -32,10 +34,21 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position="sticky" color="default" elevation={0} sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <AppBar
+        position="sticky"
+        color="default"
+        elevation={0}
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+          backgroundColor: "rgba(255, 250, 242, 0.92)",
+        }}
+      >
         <Container maxWidth="lg">
-          <Toolbar disableGutters sx={{ display: "flex", justifyContent: "space-between" }}>
-            {/* Brand */}
+          <Toolbar
+            disableGutters
+            sx={{ display: "flex", justifyContent: "space-between", minHeight: "76px" }}
+          >
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Typography
                 component={Link}
@@ -45,15 +58,14 @@ export default function Header() {
                   textDecoration: "none",
                   color: "text.primary",
                   fontWeight: 800,
-                  letterSpacing: "-0.02em",
+                  letterSpacing: "0.01em",
                 }}
               >
-                Huerta’s Albuquerque Jerky
+                Huerta's Albuquerque Jerky
               </Typography>
             </Box>
 
-            {/* Desktop nav */}
-            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 1 }}>
+            <Box sx={{ display: { xs: "none", md: "flex" }, gap: 0.5 }}>
               {navItems.map((item) => (
                 <Button
                   key={item.href}
@@ -66,19 +78,11 @@ export default function Header() {
                 </Button>
               ))}
 
-              {/* Primary CTA */}
-              <Button
-                component={Link}
-                href="/shop"
-                variant="contained"
-                color="primary"
-                sx={{ ml: 1 }}
-              >
-                Shop Jerky
+              <Button component={Link} href="/shop" variant="contained" color="primary" sx={{ ml: 1 }}>
+                Browse Flavors
               </Button>
             </Box>
 
-            {/* Mobile nav button */}
             <IconButton
               edge="end"
               onClick={toggleDrawer(true)}
@@ -91,9 +95,8 @@ export default function Header() {
         </Container>
       </AppBar>
 
-      {/* Mobile drawer */}
       <Drawer anchor="right" open={open} onClose={toggleDrawer(false)}>
-        <Box sx={{ width: 280 }} role="presentation" onClick={toggleDrawer(false)}>
+        <Box sx={{ width: 300 }} role="presentation" onClick={toggleDrawer(false)}>
           <Box sx={{ p: 2 }}>
             <Typography variant="subtitle1" sx={{ fontWeight: 800 }}>
               Menu
@@ -109,7 +112,7 @@ export default function Header() {
             ))}
             <ListItem sx={{ pt: 2 }}>
               <Button component={Link} href="/shop" fullWidth variant="contained">
-                Shop Jerky
+                Browse Flavors
               </Button>
             </ListItem>
           </List>
