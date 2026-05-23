@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   AppBar,
@@ -22,6 +23,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
+  { label: "Locations", href: "/locations" },
   { label: "FAQ", href: "/faq" },
   { label: "Wholesale", href: "/wholesale" },
   { label: "Contact", href: "/contact" },
@@ -39,9 +41,10 @@ export default function Header() {
         color="default"
         elevation={0}
         sx={{
-          borderBottom: 1,
-          borderColor: "divider",
-          backgroundColor: "rgba(255, 250, 242, 0.92)",
+          borderBottom: "2px solid",
+          borderColor: "#d4c4a8",
+          backgroundColor: "rgba(255, 251, 242, 0.96)",
+          boxShadow: "0 1px 8px rgba(0,0,0,0.06)",
         }}
       >
         <Container maxWidth="lg">
@@ -49,19 +52,50 @@ export default function Header() {
             disableGutters
             sx={{ display: "flex", justifyContent: "space-between", minHeight: "76px" }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+              <Box
+                component={Link}
+                href="/"
+                sx={{
+                  position: "relative",
+                  width: 48,
+                  height: 48,
+                  borderRadius: "50%",
+                  overflow: "hidden",
+                  flexShrink: 0,
+                  border: "2px solid",
+                  borderColor: "primary.main",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Image
+                  src="/images/1000010711.jpg"
+                  alt="Huerta's Albuquerque Jerky"
+                  width={48}
+                  height={48}
+                  style={{ objectFit: "cover", borderRadius: "50%" }}
+                />
+              </Box>
               <Typography
                 component={Link}
                 href="/"
                 variant="h6"
                 sx={{
                   textDecoration: "none",
-                  color: "text.primary",
+                  color: "primary.main",
                   fontWeight: 800,
-                  letterSpacing: "0.01em",
+                  fontFamily: '"Alegreya", "Book Antiqua", Georgia, serif',
+                  fontSize: "1.35rem",
+                  letterSpacing: "-0.01em",
+                  lineHeight: 1.1,
                 }}
               >
-                Huerta's Albuquerque Jerky
+                Huerta's
+                <Box component="span" sx={{ color: "text.secondary", fontFamily: '"Montserrat", sans-serif', fontWeight: 500, fontSize: "0.75rem", display: "block", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                  Albuquerque Jerky
+                </Box>
               </Typography>
             </Box>
 

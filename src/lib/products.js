@@ -1,3 +1,11 @@
+const productImages = [
+  "1000010711.jpg",
+  "1000013223.jpg",
+  "1000013220.jpg",
+  "1000010715.jpg",
+  "1000010716.jpg",
+];
+
 const products = [
   {
     slug: "christmas",
@@ -6,6 +14,7 @@ const products = [
     heatLevel: "Medium",
     isFeatured: true,
     isPurchasable: false,
+    image: productImages[0],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -20,6 +29,7 @@ const products = [
     heatLevel: "Medium",
     isFeatured: true,
     isPurchasable: false,
+    image: productImages[1],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -34,6 +44,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: true,
     isPurchasable: false,
+    image: productImages[2],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -48,6 +59,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: true,
     isPurchasable: false,
+    image: productImages[3],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -62,6 +74,7 @@ const products = [
     heatLevel: "Hot",
     isFeatured: true,
     isPurchasable: false,
+    image: productImages[4],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -76,6 +89,7 @@ const products = [
     heatLevel: "Hot",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[0],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -90,6 +104,7 @@ const products = [
     heatLevel: "Hot",
     isFeatured: true,
     isPurchasable: false,
+    image: productImages[1],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -104,6 +119,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[2],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "Zesty dill tang and savory beef in one bold bite.",
@@ -117,6 +133,7 @@ const products = [
     heatLevel: "Medium",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[3],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "Classic pickle flavor with chile heat layered in.",
@@ -130,6 +147,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[4],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "Creamy ranch-style flavor in a savory jerky format.",
@@ -143,6 +161,7 @@ const products = [
     heatLevel: "Medium",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[0],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "Sweet honey glaze meets a clean sriracha kick.",
@@ -156,6 +175,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[1],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -170,6 +190,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[2],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -184,6 +205,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[3],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "Bold garlic blended with nutty parmesan richness.",
@@ -197,6 +219,7 @@ const products = [
     heatLevel: "None",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[4],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "No extra noise, just quality beef and signature texture.",
@@ -210,6 +233,7 @@ const products = [
     heatLevel: "Medium",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[0],
     priceCents: null,
     stripePriceId: null,
     shortDescription:
@@ -224,6 +248,7 @@ const products = [
     heatLevel: "Very Hot",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[1],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "A serious heat level for people who chase spice.",
@@ -237,6 +262,7 @@ const products = [
     heatLevel: "Mild",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[2],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "A timeless black pepper profile on lean beef.",
@@ -250,6 +276,7 @@ const products = [
     heatLevel: "Medium",
     isFeatured: false,
     isPurchasable: false,
+    image: productImages[3],
     priceCents: null,
     stripePriceId: null,
     shortDescription: "Smoky chipotle character with a warm, slow burn.",

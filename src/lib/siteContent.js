@@ -26,6 +26,28 @@ export const homepageHighlights = [
   "Balanced thin-cut texture: not too crispy, not too chewy",
 ];
 
+export const hours = [
+  { day: "Monday", hours: "Closed" },
+  { day: "Tuesday", hours: "11:00 AM – 6:00 PM" },
+  { day: "Wednesday", hours: "11:00 AM – 6:00 PM" },
+  { day: "Thursday", hours: "11:00 AM – 6:00 PM" },
+  { day: "Friday", hours: "11:00 AM – 7:00 PM" },
+  { day: "Saturday", hours: "10:00 AM – 5:00 PM" },
+  { day: "Sunday", hours: "Closed" },
+];
+
+export const locations = [
+  {
+    name: "Albuquerque Storefront",
+    addressLine1: business.addressLine1,
+    cityStateZip: business.cityStateZip,
+    phone: business.phoneDisplay,
+    phoneTel: business.phoneTel,
+    hours,
+    isPrimary: true,
+  },
+];
+
 export const ecommerceReadiness = {
   checkoutLive: false,
   statusLabel: "Online checkout is coming soon",
